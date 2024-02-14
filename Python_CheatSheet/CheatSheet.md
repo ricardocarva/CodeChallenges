@@ -1,63 +1,93 @@
-Lists:
 
-Example 1: Basic list operations
-python
-Copy code
-# Creating a list
+
+## Data Structures:
+
+1. [Lists:](#lists) Python's built-in list data structure is versatile and widely used for storing collections of items.
+2. [Strings:](#Strings) Strings are immutable sequences of characters and are extensively used for handling textual data.
+3. [Dictionaries:](#Dictionaries) Dictionaries are collections of key-value pairs, allowing efficient lookup and manipulation.
+4. [Sets:](#Sets) Sets are unordered collections of unique elements, useful for tasks like eliminating duplicates.
+5. [Trees:](#Trees): Often implemented using classes and pointers, trees are crucial for many algorithm problems like binary search trees (BSTs), heaps, etc.
+6. [Graphs:](#Graphs): Graphs can be represented using adjacency lists or matrices and are essential for problems involving relationships between elements.
+
+Functions:
+1. Sorting: sorted() function or sort() method for sorting lists.
+2. Searching: binary_search() or bisect module for efficient searching.
+3. Regular Expressions: re module for pattern matching in strings.
+4. Math Operations: math module for mathematical operations.
+5. Input/Output: Functions like input() and print() for handling input/output.
+6. Recursion: Understanding recursion and using it to solve problems efficiently.
+7. Dynamic Programming: Implementing dynamic programming solutions for optimization problems.
+
+Algorithms:
+1. Sorting Algorithms: Understanding and implementing algorithms like quicksort, mergesort, heapsort, etc.
+2. Search Algorithms: Binary search, depth-first search (DFS), breadth-first search (BFS), etc.
+3. Dynamic Programming: Techniques for solving optimization problems by breaking them down into simpler subproblems.
+4. Graph Algorithms: Algorithms like Dijkstra's algorithm, Kruskal's algorithm, etc., for solving graph-related problems.
+5. Greedy Algorithms: Solving problems by making the locally optimal choice at each stage with the hope of finding a global optimum.
+6. Backtracking: A technique for systematically searching through a space of possible solutions.
+
+Additional Libraries:
+1. NumPy: For numerical computing and handling arrays.
+2. Pandas: For data manipulation and analysis.
+3. Matplotlib/Seaborn: For data visualization.
+4. Scikit-learn: For machine learning tasks.
+5. NetworkX: For graph analysis and manipulation.
+
+## Lists:
+### Example 1: Basic list operations
+#### Creating a list
 my_list = [1, 2, 3, 4, 5]
 
-# Accessing elements
+#### Accessing elements
 print(my_list[0])  # Output: 1
 
-# Adding elements
+#### Adding elements
 my_list.append(6)
 print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
 
-# Removing elements
+#### Removing elements
 my_list.remove(3)
 print(my_list)  # Output: [1, 2, 4, 5, 6]
-Strings:
 
+## Strings:
 Example 2: String manipulation
-python
-Copy code
-# Concatenation
+
+#### Concatenation
 greeting = "Hello"
 name = "John"
 message = greeting + ", " + name + "!"
 print(message)  # Output: Hello, John!
 
-# Splitting
+#### Splitting
 sentence = "This is a sample sentence"
 words = sentence.split()
 print(words)  # Output: ['This', 'is', 'a', 'sample', 'sentence']
 
-# Substring
+#### Substring
 substring = sentence[5:7]
 print(substring)  # Output: is
-Dictionaries:
 
+## Dictionaries:
 Example 3: Dictionary operations
-python
-Copy code
-# Creating a dictionary
+
+
+#### Creating a dictionary
 my_dict = {'name': 'John', 'age': 30, 'city': 'New York'}
 
-# Accessing values
+#### Accessing values
 print(my_dict['name'])  # Output: John
 
-# Adding a new key-value pair
+#### Adding a new key-value pair
 my_dict['occupation'] = 'Engineer'
 print(my_dict)  # Output: {'name': 'John', 'age': 30, 'city': 'New York', 'occupation': 'Engineer'}
 
 # Removing a key-value pair
 del my_dict['age']
 print(my_dict)  # Output: {'name': 'John', 'city': 'New York', 'occupation': 'Engineer'}
-Sets:
 
+## Sets:
 Example 4: Set operations
-python
-Copy code
+
 # Creating a set
 my_set = {1, 2, 3, 4, 5}
 
@@ -68,11 +98,9 @@ print(my_set)  # Output: {1, 2, 3, 4, 5, 6}
 # Removing elements
 my_set.remove(3)
 print(my_set)  # Output: {1, 2, 4, 5, 6}
-Trees (Binary Search Tree):
 
+## Trees (Binary Search Tree):
 Example 5: BST implementation
-python
-Copy code
 class TreeNode:
     def __init__(self, value):
         self.value = value
@@ -105,11 +133,10 @@ root = insert(root, 1)
 root = insert(root, 4)
 
 inorder_traversal(root)  # Output: 1, 3, 4, 5, 7
-Graphs (Adjacency List Representation):
 
+## Graphs (Adjacency List Representation):
 Example 6: Graph representation and traversal
-python
-Copy code
+
 class Graph:
     def __init__(self):
         self.adj_list = {}
@@ -139,37 +166,29 @@ graph.add_edge(3, 3)
 graph.dfs(2)  # Output: 2, 0, 1, 3
 
 
-Sorting:
-
-Example 1: Using the sorted() function
-
-python
-Copy code
+## Sorting:
+### Example 1: Using the sorted() function
 my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5]
 sorted_list = sorted(my_list)
 print(sorted_list)  # Output: [1, 1, 2, 3, 4, 5, 5, 6, 9]
-Example 2: Using the sort() method
 
-python
-Copy code
+### Example 2: Using the sort() method
 my_list = [3, 1, 4, 1, 5, 9, 2, 6, 5]
 my_list.sort()
 print(my_list)  # Output: [1, 1, 2, 3, 4, 5, 5, 6, 9]
+
 Searching:
+### Example 3: Using the bisect module for binary search
 
-Example 3: Using the bisect module for binary search
-python
-Copy code
 import bisect
-
 my_list = [1, 3, 5, 7, 9]
 index = bisect.bisect_left(my_list, 5)
 print(index)  # Output: 2
-Regular Expressions:
 
+### Regular Expressions:
 Example 4: Using the re module for pattern matching
-python
-Copy code
+
+
 import re
 
 text = "The quick brown fox jumps over the lazy dog"
@@ -179,8 +198,8 @@ print(matches)  # Output: ['The', 'fox', 'the', 'dog']
 Math Operations:
 
 Example 5: Using the math module for mathematical operations
-python
-Copy code
+
+
 import math
 
 num = 16
@@ -189,15 +208,15 @@ print(square_root)  # Output: 4.0
 Input/Output:
 
 Example 6: Using input() and print() functions
-python
-Copy code
+
+
 name = input("Enter your name: ")
 print("Hello,", name)
 Recursion:
 
 Example 7: Recursively calculate factorial
-python
-Copy code
+
+
 def factorial(n):
     if n == 0:
         return 1
@@ -208,8 +227,8 @@ print(result)  # Output: 120
 Dynamic Programming:
 
 Example 8: Fibonacci sequence using dynamic programming
-python
-Copy code
+
+
 def fibonacci(n, memo={}):
     if n in memo:
         return memo[n]
@@ -225,8 +244,8 @@ Sorting Algorithms:
 
 Example 1: Quicksort algorithm
 
-python
-Copy code
+
+
 def quicksort(arr):
     if len(arr) <= 1:
         return arr
@@ -241,8 +260,8 @@ sorted_list = quicksort(my_list)
 print(sorted_list)  # Output: [1, 1, 2, 3, 4, 5, 5, 6, 9]
 Example 2: Mergesort algorithm
 
-python
-Copy code
+
+
 def merge(left, right):
     result = []
     i, j = 0, 0
@@ -272,8 +291,8 @@ Search Algorithms:
 
 Example 3: Binary search algorithm
 
-python
-Copy code
+
+
 def binary_search(arr, target):
     left, right = 0, len(arr) - 1
     while left <= right:
@@ -291,8 +310,8 @@ index = binary_search(my_list, 5)
 print(index)  # Output: 2
 Example 4: Depth-first search (DFS) algorithm
 
-python
-Copy code
+
+
 def dfs(graph, node, visited=set()):
     if node not in visited:
         print(node)
@@ -311,8 +330,8 @@ Example 5: Fibonacci sequence using dynamic programming
 Graph Algorithms:
 
 Example 6: Dijkstra's algorithm for finding shortest paths
-python
-Copy code
+
+
 import heapq
 
 def dijkstra(graph, start):
@@ -342,8 +361,8 @@ print(shortest_paths)  # Output: {'A': 0, 'B': 1, 'C': 3, 'D': 4}
 Greedy Algorithms:
 
 Example 7: Fractional Knapsack problem
-python
-Copy code
+
+
 def fractional_knapsack(items, capacity):
     items.sort(key=lambda x: x[1] / x[0], reverse=True)
     total_value = 0
@@ -364,8 +383,8 @@ print(max_value)  # Output: 240.0
 Backtracking:
 
 Example 8: N-Queens problem
-python
-Copy code
+
+
 def is_safe(board, row, col):
     for i in range(row):
         if board[i] == col or \
@@ -398,8 +417,8 @@ NumPy:
 
 Example 1: Creating and manipulating arrays
 
-python
-Copy code
+
+
 import numpy as np
 
 # Creating a NumPy array
@@ -414,8 +433,8 @@ reshaped_arr = arr.reshape(5, 1)
 print(reshaped_arr)
 Example 2: Computing statistical measures
 
-python
-Copy code
+
+
 # Computing mean and standard deviation
 data = np.array([1, 2, 3, 4, 5])
 mean = np.mean(data)
@@ -426,8 +445,8 @@ Pandas:
 
 Example 3: Loading and exploring a dataset
 
-python
-Copy code
+
+
 import pandas as pd
 
 # Loading a CSV file into a DataFrame
@@ -440,8 +459,8 @@ print(df.head())
 print(df.describe())
 Example 4: Data manipulation and analysis
 
-python
-Copy code
+
+
 # Filtering data
 filtered_data = df[df['column'] > 10]
 
@@ -454,8 +473,8 @@ Matplotlib/Seaborn:
 
 Example 5: Creating basic plots with Matplotlib
 
-python
-Copy code
+
+
 import matplotlib.pyplot as plt
 
 # Plotting a simple line graph
@@ -468,8 +487,8 @@ plt.title('Sine Function')
 plt.show()
 Example 6: Creating advanced plots with Seaborn
 
-python
-Copy code
+
+
 import seaborn as sns
 
 # Creating a heatmap from a DataFrame
@@ -481,8 +500,8 @@ Scikit-learn:
 
 Example 7: Training a machine learning model
 
-python
-Copy code
+
+
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
@@ -497,8 +516,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 Example 8: Evaluating a machine learning model
 
-python
-Copy code
+
+
 from sklearn.metrics import mean_squared_error
 
 # Calculating mean squared error
@@ -508,8 +527,8 @@ NetworkX:
 
 Example 9: Creating and analyzing a graph
 
-python
-Copy code
+
+
 import networkx as nx
 
 # Creating a graph
@@ -524,8 +543,8 @@ print("Edges:", G.edges())
 print("Degree of node 2:", G.degree(2))
 Example 10: Visualizing a graph
 
-python
-Copy code
+
+
 # Drawing the graph
 nx.draw(G, with_labels=True)
 plt.show()
